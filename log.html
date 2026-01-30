@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Station 26 | Mission Log</title>
+    <style>
+        :root {
+            --primary: #1a1c2c;
+            --accent: #4d94ff;
+            --text: #e0e0e0;
+            --bg: #0f111a;
+        }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        header {
+            background: var(--primary);
+            border-bottom: 2px solid var(--accent);
+            width: 100%;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            width: 90%;
+            margin: 2rem 0;
+        }
+        .log-entry {
+            border-left: 3px solid var(--accent);
+            background: #161925;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        .timestamp {
+            font-family: monospace;
+            color: var(--accent);
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+        }
+        .nav-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 2rem;
+        }
+        .nav-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>MISSION LOG</h1>
+        <p>Station 26 Activity Archive</p>
+    </header>
+
+    <div class="container">
+        
+        <div class="log-entry">
+            <div class="timestamp">2026-01-30 // 23:55</div>
+            <h3>System Activation</h3>
+            <p>Station 26 is officially online. Successfully connected GitHub repository to Netlify hosting. The synchronization link is stable.</p>
+        </div>
+
+        <div class="log-entry">
+            <div class="timestamp">PROJECT_BETA // PENDING</div>
+            <h3>Future Entry</h3>
+            <p>Waiting for next Gemini-generated module...</p>
+        </div>
+
+        <a href="index.html" class="nav-link">← Return to Main Control</a>
+    </div>
+
+    <footer>
+        <p style="color: #444; font-size: 0.8rem;">SECURE DATA CHANNEL // STATION 26</p>
+    </footer>
+
+</body>
+</html>
