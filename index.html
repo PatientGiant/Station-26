@@ -40,6 +40,11 @@
             border-radius: 8px;
             padding: 1.5rem;
             margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        .project-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 0 10px rgba(77, 148, 255, 0.1);
         }
         .status-badge {
             display: inline-block;
@@ -83,11 +88,19 @@
     </header>
 
     <div class="container">
+        
         <div class="project-card">
             <span class="status-badge">Online</span>
             <h3>🛰️ Mission Log</h3>
-            <p>Access the chronological archive of all AI-generated modules and system updates for Station 26.</p>
+            <p>Access the chronological archive of all system updates and activity logs.</p>
             <a href="log.html" class="btn">Enter Archive</a>
+        </div>
+
+        <div class="project-card">
+            <span class="status-badge">New Module</span>
+            <h3>🏖️ April 26 Holiday</h3>
+            <p>Special project module focused on holiday planning and itinerary details.</p>
+            <a href="Apr26-Holiday.html" class="btn">Launch Module</a>
         </div>
 
         <div class="project-card" style="opacity: 0.5;">
@@ -96,6 +109,7 @@
             <p>Awaiting data input for the next project expansion.</p>
             <a href="#" class="btn" style="border-color: #444; color: #444; pointer-events: none;">Locked</a>
         </div>
+
     </div>
 
     <footer>
