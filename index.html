@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
-    <title>Station 26 | Digital Lab</title>
+    <title>Station 26 | Main Control</title>
     <style>
         :root {
-            --primary: #1a1c2c; /* Deeper, more "station" like color */
-            --accent: #4d94ff;  /* "High-tech" blue */
+            --primary: #1a1c2c; 
+            --accent: #4d94ff;  
             --text: #e0e0e0;
-            --bg: #0f111a;      /* Dark mode aesthetic */
+            --bg: #0f111a;      
         }
         body {
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -57,7 +57,7 @@
             color: var(--accent);
             border: 1px solid var(--accent);
             text-decoration: none;
-            padding: 0.5rem 1.5rem;
+            padding: 0.7rem 2rem;
             border-radius: 4px;
             font-weight: 600;
             transition: all 0.3s;
@@ -65,33 +65,41 @@
         .btn:hover {
             background: var(--accent);
             color: white;
+            box-shadow: 0 0 15px rgba(77, 148, 255, 0.4);
         }
         footer {
             margin-top: auto;
             padding: 2rem;
             font-size: 0.8rem;
-            color: #555;
+            color: #444;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1 style="letter-spacing: 2px;">STATION 26</h1>
-        <p style="opacity: 0.7;">AI Generation Hub & Digital Archive</p>
+        <h1 style="letter-spacing: 4px;">STATION 26</h1>
+        <p style="opacity: 0.7; letter-spacing: 1px;">AI GENERATION HUB // CONTROL CENTER</p>
     </header>
 
     <div class="container">
         <div class="project-card">
-            <span class="status-badge">Active</span>
-            <h3>🛰️ Main Control</h3>
-            <p>This is the primary landing page for all Gemini-built modules. Access restricted to link-holders only.</p>
-            <a href="#" class="btn">Initialize</a>
+            <span class="status-badge">Online</span>
+            <h3>🛰️ Mission Log</h3>
+            <p>Access the chronological archive of all AI-generated modules and system updates for Station 26.</p>
+            <a href="log.html" class="btn">Enter Archive</a>
+        </div>
+
+        <div class="project-card" style="opacity: 0.5;">
+            <span class="status-badge" style="background: #444;">Offline</span>
+            <h3>📂 New Module</h3>
+            <p>Awaiting data input for the next project expansion.</p>
+            <a href="#" class="btn" style="border-color: #444; color: #444; pointer-events: none;">Locked</a>
         </div>
     </div>
 
     <footer>
-        System Year: 2026 | Powered by Gemini
+        STATION 26 | SYSTEM YEAR: 2026 | SECURE ARCHIVE
     </footer>
 
 </body>
