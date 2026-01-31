@@ -355,11 +355,47 @@
                         
                         <!-- Elevation Profile Chart (Large) -->
                         <div class="bg-white rounded-xl shadow-sm p-6">
-                            <h3 class="text-lg font-bold text-teal-800 mb-4">Elevation Profile</h3>
+                            <h3 class="text-lg font-bold text-teal-800 mb-4">Elevation Profile (129 km)</h3>
                             <div class="chart-container h-64">
                                 <canvas id="elevationChartLarge"></canvas>
                             </div>
-                            <p class="text-sm text-gray-500 mt-4 text-center">Key Climbs: Oude Kwaremont (111m), Paterberg (80m), Koppenberg (77m)</p>
+                            <div class="grid grid-cols-3 gap-4 mt-6 text-center text-sm">
+                                <div class="p-2 bg-gray-50 rounded">
+                                    <span class="block font-bold text-gray-800">Koppenberg</span>
+                                    <span class="text-xs text-gray-500">~km 85 | Max 22%</span>
+                                </div>
+                                <div class="p-2 bg-gray-50 rounded">
+                                    <span class="block font-bold text-gray-800">Oude Kwaremont</span>
+                                    <span class="text-xs text-gray-500">~km 105 | 2.2km Cobbles</span>
+                                </div>
+                                <div class="p-2 bg-gray-50 rounded">
+                                    <span class="block font-bold text-gray-800">Paterberg</span>
+                                    <span class="text-xs text-gray-500">~km 110 | Max 20%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Route Highlights -->
+                        <div class="bg-white rounded-xl shadow-sm p-6">
+                            <h3 class="font-bold text-teal-900 mb-4">Route Breakdown (2025 Placeholder)</h3>
+                            <div class="space-y-4 text-sm text-gray-600">
+                                <div class="flex">
+                                    <div class="w-16 font-bold text-teal-600">0 - 60km</div>
+                                    <div><span class="font-semibold text-gray-800">The Warm Up.</span> Flat to rolling terrain. Save your energy here. Focus on eating and hydrating.</div>
+                                </div>
+                                <div class="flex">
+                                    <div class="w-16 font-bold text-teal-600">60 - 85km</div>
+                                    <div><span class="font-semibold text-gray-800">The Pre-Final.</span> The hills start coming. Positioning becomes key leading into the Koppenberg.</div>
+                                </div>
+                                <div class="flex">
+                                    <div class="w-16 font-bold text-teal-600">85 - 115km</div>
+                                    <div><span class="font-semibold text-gray-800">The Hellingen.</span> The holy trinity of climbs: Koppenberg, Oude Kwaremont, Paterberg. This is the hardest part.</div>
+                                </div>
+                                <div class="flex">
+                                    <div class="w-16 font-bold text-teal-600">115 - 129km</div>
+                                    <div><span class="font-semibold text-gray-800">The Run-In.</span> Flat(ish) run to Oudenaarde. Empty the tank!</div>
+                                </div>
+                            </div>
                         </div>
 
                         <!-- Fueling Menu -->
@@ -417,7 +453,7 @@
                             <h3 class="font-bold text-gray-900 mb-2">Quick Stats</h3>
                             <div class="grid grid-cols-2 gap-4 text-center">
                                 <div class="bg-gray-50 p-3 rounded">
-                                    <span class="block text-2xl font-bold text-teal-600">130</span>
+                                    <span class="block text-2xl font-bold text-teal-600">129</span>
                                     <span class="text-xs text-gray-500">Kilometers</span>
                                 </div>
                                 <div class="bg-gray-50 p-3 rounded">
@@ -733,11 +769,14 @@
             
             // A. Cycling Elevation Profile (Schematic) - Small (Itinerary)
             const ctxElevation = document.getElementById('elevationChart');
+            // Data from GPX: 129km total. 
+            // Key points: Oudenaarde (20m), Koppenberg (77m), Oude Kwaremont (111m), Paterberg (80m)
+            // Simplified points for chart.js visualization based on GPX route
             const elevationData = {
-                labels: ['0km', '20km', 'Oude Kwaremont', 'Paterberg', 'Koppenberg', '130km'],
+                labels: ['0km', '20km', '40km', '60km', '85km (Koppenberg)', '95km', '105km (Oude Kwaremont)', '110km (Paterberg)', '120km', '129km'],
                 datasets: [{
                     label: 'Elevation',
-                    data: [20, 40, 111, 80, 77, 20],
+                    data: [15, 20, 35, 45, 77, 30, 111, 80, 25, 13],
                     borderColor: '#0D9488', // Teal
                     backgroundColor: 'rgba(13, 148, 136, 0.1)',
                     fill: true,
