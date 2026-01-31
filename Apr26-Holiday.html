@@ -99,6 +99,7 @@
             </div>
             <div class="hidden md:flex space-x-8">
                 <button onclick="switchTab('itinerary')" id="btn-itinerary" class="nav-item nav-active pb-1 text-gray-600 hover:text-gray-900 transition-colors">Itinerary</button>
+                <button onclick="switchTab('weride')" id="btn-weride" class="nav-item pb-1 text-gray-600 hover:text-gray-900 transition-colors">We Ride Flanders</button>
                 <button onclick="switchTab('logistics')" id="btn-logistics" class="nav-item pb-1 text-gray-600 hover:text-gray-900 transition-colors">Logistics & Docs</button>
                 <button onclick="switchTab('budget')" id="btn-budget" class="nav-item pb-1 text-gray-600 hover:text-gray-900 transition-colors">Budget Analysis</button>
             </div>
@@ -106,6 +107,7 @@
             <div class="md:hidden">
                 <select onchange="switchTab(this.value)" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                     <option value="itinerary">Itinerary</option>
+                    <option value="weride">We Ride Flanders</option>
                     <option value="logistics">Logistics</option>
                     <option value="budget">Budget</option>
                 </select>
@@ -159,10 +161,7 @@
                                 <h4 class="text-lg font-semibold mb-2">We Ride Flanders</h4>
                                 <p class="text-gray-600 text-sm">The Main Event. 130km Sportive on the historic cobbles.</p>
                                 <div id="day-apr4" class="hidden mt-4 pt-4 border-t border-gray-100 text-sm text-gray-700">
-                                    <div class="chart-container h-32">
-                                        <canvas id="elevationChart"></canvas>
-                                    </div>
-                                    <p class="mt-2 text-xs text-center text-gray-500 italic">Approximate elevation profile (Schematic)</p>
+                                    <p class="text-xs italic text-gray-500 mb-2">See "We Ride Flanders" tab for full details.</p>
                                     <p class="mt-2 text-xs"><a href="https://goo.gl/maps/8Xy8Jz8Jz8Jz8Jz8" target="_blank" class="text-teal-600 hover:underline">Map: Oudenaarde (Start/Finish)</a></p>
                                 </div>
                             </div>
@@ -343,7 +342,95 @@
                 </div>
             </div>
 
-            <!-- TAB 2: LOGISTICS (Docs & Details) -->
+            <!-- TAB 2: WE RIDE FLANDERS (Dedicated Race Tab) -->
+            <div id="tab-weride" class="tab-content hidden animate-fade-in">
+                <div class="mb-8">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4 serif-font">Race Day Command</h2>
+                    <p class="text-gray-600 max-w-3xl">Saturday, April 4, 2026. The 130km challenge.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Left Column: Race Info & Menu -->
+                    <div class="lg:col-span-2 space-y-8">
+                        
+                        <!-- Elevation Profile Chart (Large) -->
+                        <div class="bg-white rounded-xl shadow-sm p-6">
+                            <h3 class="text-lg font-bold text-teal-800 mb-4">Elevation Profile</h3>
+                            <div class="chart-container h-64">
+                                <canvas id="elevationChartLarge"></canvas>
+                            </div>
+                            <p class="text-sm text-gray-500 mt-4 text-center">Key Climbs: Oude Kwaremont (111m), Paterberg (80m), Koppenberg (77m)</p>
+                        </div>
+
+                        <!-- Fueling Menu -->
+                        <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+                            <div class="bg-teal-600 px-6 py-4">
+                                <h3 class="text-white font-bold text-lg">🚴‍♂️ The Flandrien’s Menu</h3>
+                                <p class="text-teal-100 text-sm">Fueling Strategy for April 4</p>
+                            </div>
+                            <div class="divide-y divide-gray-100">
+                                <div class="p-6 hover:bg-gray-50">
+                                    <div class="flex justify-between mb-2">
+                                        <h4 class="font-bold text-gray-900">07:00 - The "Koppenberg" Breakfast</h4>
+                                        <span class="text-xs font-mono bg-gray-100 text-gray-600 px-2 py-1 rounded">Ayuryoga Hotel</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600">Oatmeal porridge with banana & honey. Scrambled eggs on toast. Strong coffee. 500ml electrolytes.</p>
+                                </div>
+                                <div class="p-6 hover:bg-gray-50">
+                                    <div class="flex justify-between mb-2">
+                                        <h4 class="font-bold text-gray-900">10:00 - On-Bike Nutrition</h4>
+                                        <span class="text-xs font-mono bg-gray-100 text-gray-600 px-2 py-1 rounded">130km Ride</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600"><strong>"Rijsttaartje"</strong> (Rice Tart), 2-3 Energy Gels for climbs, Banana. Hydration: 1 water, 1 isotonic.</p>
+                                </div>
+                                <div class="p-6 hover:bg-gray-50">
+                                    <div class="flex justify-between mb-2">
+                                        <h4 class="font-bold text-gray-900">14:00 - Post-Ride Recovery</h4>
+                                        <span class="text-xs font-mono bg-gray-100 text-gray-600 px-2 py-1 rounded">Oudenaarde Market</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600">Frites with Mayo. Recovery Shake. <strong>Kwaremont Beer</strong> (Celebratory).</p>
+                                </div>
+                                <div class="p-6 hover:bg-gray-50">
+                                    <div class="flex justify-between mb-2">
+                                        <h4 class="font-bold text-gray-900">19:00 - Victory Dinner</h4>
+                                        <span class="text-xs font-mono bg-gray-100 text-gray-600 px-2 py-1 rounded">Brasserie</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600">Cheese Croquettes. <strong>Carbonade Flamande</strong> (Flemish Stew). Dame Blanche.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Logistics -->
+                    <div class="space-y-6">
+                        <div class="bg-teal-50 border border-teal-200 rounded-xl p-6">
+                            <h3 class="font-bold text-teal-900 mb-4">Friday Prep Checklist</h3>
+                            <ul class="space-y-3 text-sm text-teal-800">
+                                <li class="flex items-center"><input type="checkbox" class="mr-2 h-4 w-4 text-teal-600 focus:ring-teal-500 border-gray-300 rounded"> Pick up Rental Bike</li>
+                                <li class="flex items-center"><input type="checkbox" class="mr-2 h-4 w-4 text-teal-600 focus:ring-teal-500 border-gray-300 rounded"> Buy Rijsttaartjes (Bakery)</li>
+                                <li class="flex items-center"><input type="checkbox" class="mr-2 h-4 w-4 text-teal-600 focus:ring-teal-500 border-gray-300 rounded"> Buy Bananas & Water</li>
+                                <li class="flex items-center"><input type="checkbox" class="mr-2 h-4 w-4 text-teal-600 focus:ring-teal-500 border-gray-300 rounded"> Carb-load Dinner (Pasta)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white rounded-xl shadow-sm p-6">
+                            <h3 class="font-bold text-gray-900 mb-2">Quick Stats</h3>
+                            <div class="grid grid-cols-2 gap-4 text-center">
+                                <div class="bg-gray-50 p-3 rounded">
+                                    <span class="block text-2xl font-bold text-teal-600">130</span>
+                                    <span class="text-xs text-gray-500">Kilometers</span>
+                                </div>
+                                <div class="bg-gray-50 p-3 rounded">
+                                    <span class="block text-2xl font-bold text-teal-600">1,500</span>
+                                    <span class="text-xs text-gray-500">Est. Elevation (m)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 3: LOGISTICS (Docs & Details) -->
             <div id="tab-logistics" class="tab-content hidden animate-fade-in">
                 <div class="mb-8">
                     <h2 class="text-3xl font-bold text-gray-900 mb-4 serif-font">Logistics Command</h2>
@@ -462,6 +549,10 @@
                                 <span class="font-mono bg-gray-100 px-2 py-0.5 rounded">QYFKDB</span>
                             </div>
                             <div class="flex justify-between border-b pb-2">
+                                <span class="text-gray-500">Ticket No</span>
+                                <span class="font-mono bg-gray-100 px-2 py-0.5 rounded">176 2202417443</span>
+                            </div>
+                            <div class="flex justify-between border-b pb-2">
                                 <span class="text-gray-500">Outbound</span>
                                 <span class="font-medium">Wed, Apr 2 (EK183)</span>
                             </div>
@@ -518,7 +609,7 @@
                 </div>
             </div>
 
-            <!-- TAB 3: BUDGET (Visual Analysis) -->
+            <!-- TAB 4: BUDGET (Visual Analysis) -->
             <div id="tab-budget" class="tab-content hidden animate-fade-in">
                 <div class="mb-8">
                     <h2 class="text-3xl font-bold text-gray-900 mb-4 serif-font">Financial Overview</h2>
@@ -640,38 +731,57 @@
         // --- 3. Chart.js Implementation ---
         document.addEventListener('DOMContentLoaded', function() {
             
-            // A. Cycling Elevation Profile (Schematic)
+            // A. Cycling Elevation Profile (Schematic) - Small (Itinerary)
             const ctxElevation = document.getElementById('elevationChart');
+            const elevationData = {
+                labels: ['0km', '20km', 'Oude Kwaremont', 'Paterberg', 'Koppenberg', '130km'],
+                datasets: [{
+                    label: 'Elevation',
+                    data: [20, 40, 111, 80, 77, 20],
+                    borderColor: '#0D9488', // Teal
+                    backgroundColor: 'rgba(13, 148, 136, 0.1)',
+                    fill: true,
+                    tension: 0.4,
+                    pointRadius: 4
+                }]
+            };
+            const elevationOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                return tooltipItems[0].label;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: { display: false },
+                    x: { grid: { display: false } }
+                }
+            };
+
             if(ctxElevation) {
                 new Chart(ctxElevation, {
                     type: 'line',
-                    data: {
-                        labels: ['0km', '20km', 'Oude Kwaremont', 'Paterberg', 'Koppenberg', '130km'],
-                        datasets: [{
-                            label: 'Elevation',
-                            data: [20, 40, 111, 80, 77, 20],
-                            borderColor: '#0D9488', // Teal
-                            backgroundColor: 'rgba(13, 148, 136, 0.1)',
-                            fill: true,
-                            tension: 0.4,
-                            pointRadius: 4
-                        }]
-                    },
+                    data: elevationData,
+                    options: elevationOptions
+                });
+            }
+
+            // A2. Cycling Elevation Profile (Large) - Race Tab
+            const ctxElevationLarge = document.getElementById('elevationChartLarge');
+            if(ctxElevationLarge) {
+                new Chart(ctxElevationLarge, {
+                    type: 'line',
+                    data: elevationData, // Reuse data
                     options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: {
-                            legend: { display: false },
-                            tooltip: {
-                                callbacks: {
-                                    title: function(tooltipItems) {
-                                        return tooltipItems[0].label;
-                                    }
-                                }
-                            }
-                        },
+                        ...elevationOptions,
                         scales: {
-                            y: { display: false },
+                            y: { display: true, title: { display: true, text: 'Meters' } },
                             x: { grid: { display: false } }
                         }
                     }
