@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dubai Real Estate - International Investor Q&A</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Palette: Matching the Jan 2026 Report -->
+    <style>
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #F8FAFC;
+            color: #1E293B;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-slate-50">
+
+    <!-- Header -->
+    <header class="bg-slate-900 text-white py-10 px-4 shadow-lg border-b-4 border-cyan-500">
+        <div class="max-w-6xl mx-auto text-center">
+            <div class="inline-block bg-cyan-600 text-xs font-bold px-3 py-1 rounded-full mb-3 uppercase tracking-wider">Investor Intelligence</div>
+            <h1 class="text-3xl md:text-5xl font-extrabold mb-2">International Investor <span class="text-blue-400">Q&A</span></h1>
+            <p class="text-lg text-slate-300">Strategic insights for Q1 2026 market entry.</p>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 py-12">
+        
+        <!-- Intro Note -->
+        <div class="mb-10 text-center max-w-3xl mx-auto">
+            <p class="text-slate-600">
+                Based on the January 2026 performance data, we have curated the most pressing questions for international stakeholders looking to deploy capital in Dubai.
+            </p>
+        </div>
+
+        <!-- Q&A Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- Card 1: Market Stability -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-slate-100 transition-all duration-300 card-hover flex flex-col">
+                <div class="bg-blue-50 p-4 border-b border-blue-100">
+                    <div class="text-blue-600 text-sm font-bold uppercase mb-1">Market Cycle</div>
+                    <h3 class="text-lg font-bold text-slate-800">Is it too late to enter the market in 2026?</h3>
+                </div>
+                <div class="p-6 flex-grow">
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        <strong class="text-slate-900">Verdict: No, but strategy must shift.</strong>
+                    </p>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        While the rapid 20-30% annual spikes are over, the market has matured into a stable growth phase (projected 2.5% - 3.5% for Q1 2026). This is safer for institutional capital and long-term holding, though "flipping" carries higher risk now than in 2024.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 2: Visa & Residency -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-slate-100 transition-all duration-300 card-hover flex flex-col">
+                <div class="bg-cyan-50 p-4 border-b border-cyan-100">
+                    <div class="text-cyan-600 text-sm font-bold uppercase mb-1">Residency</div>
+                    <h3 class="text-lg font-bold text-slate-800">Does buying property still guarantee a Visa?</h3>
+                </div>
+                <div class="p-6 flex-grow">
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        <strong class="text-slate-900">Verdict: Yes, the Golden Visa remains a primary driver.</strong>
+                    </p>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Investments of AED 2M+ (approx. $545k) grant a 10-year renewable Golden Visa. For lower brackets (AED 750k+), 2-year visas are available. This policy stability is a key anchor for the 2026 demand floor.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 3: Location Strategy -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-slate-100 transition-all duration-300 card-hover flex flex-col">
+                <div class="bg-indigo-50 p-4 border-b border-indigo-100">
+                    <div class="text-indigo-600 text-sm font-bold uppercase mb-1">ROI Strategy</div>
+                    <h3 class="text-lg font-bold text-slate-800">Yields vs. Appreciation: Where should I buy?</h3>
+                </div>
+                <div class="p-6 flex-grow">
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start">
+                            <span class="text-indigo-500 mr-2 font-bold">&#10148;</span>
+                            <span class="text-slate-600"><strong>For Rental Yields (6-8%):</strong> Focus on high-volume mid-market areas like JVC and Business Bay.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-indigo-500 mr-2 font-bold">&#10148;</span>
+                            <span class="text-slate-600"><strong>For Capital Growth:</strong> Luxury waterfronts (Palm Jebel Ali, Dubai Islands) offer higher appreciation potential as global wealth migrates.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Card 4: Off-Plan Risks -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-slate-100 transition-all duration-300 card-hover flex flex-col">
+                <div class="bg-slate-100 p-4 border-b border-slate-200">
+                    <div class="text-slate-500 text-sm font-bold uppercase mb-1">Investment Type</div>
+                    <h3 class="text-lg font-bold text-slate-800">Should I buy Off-Plan or Ready?</h3>
+                </div>
+                <div class="p-6 flex-grow">
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        <strong class="text-slate-900">Verdict: Off-Plan dominates international portfolios (58%).</strong>
+                    </p>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Off-plan allows investors to bypass high mortgage rates via developer payment plans (often interest-free during construction). Ready properties are currently better suited for end-users moving immediately.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 5: Supply Concerns -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-slate-100 transition-all duration-300 card-hover flex flex-col">
+                <div class="bg-amber-50 p-4 border-b border-amber-100">
+                    <div class="text-amber-600 text-sm font-bold uppercase mb-1">Risk Analysis</div>
+                    <h3 class="text-lg font-bold text-slate-800">Is there an oversupply risk coming?</h3>
+                </div>
+                <div class="p-6 flex-grow">
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        <strong class="text-slate-900">Verdict: Monitor 2027/2028.</strong>
+                    </p>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        While 2026 supply is manageable (approx. 45k units), a peak is expected in 2027. However, the aggressive population growth target (aiming for 5.8M by 2040) is currently absorbing new stock, keeping vacancy rates low.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 6: Currency & Tax -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-slate-100 transition-all duration-300 card-hover flex flex-col">
+                <div class="bg-emerald-50 p-4 border-b border-emerald-100">
+                    <div class="text-emerald-600 text-sm font-bold uppercase mb-1">Financials</div>
+                    <h3 class="text-lg font-bold text-slate-800">What is the tax implication for foreign buyers?</h3>
+                </div>
+                <div class="p-6 flex-grow">
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                        <strong class="text-slate-900">Verdict: Still highly favorable.</strong>
+                    </p>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Dubai maintains 0% property tax and 0% capital gains tax. The only major statutory cost is the one-time 4% DLD (Land Department) fee upon purchase. This remains a massive competitive advantage over London or New York.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Call to Action Footer -->
+        <div class="mt-12 bg-slate-800 rounded-xl p-8 text-center shadow-lg">
+            <h2 class="text-2xl font-bold text-white mb-2">Need a localized strategy?</h2>
+            <p class="text-slate-400 mb-6">Market conditions vary significantly between villa communities and high-rise districts.</p>
+            <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition-colors">
+                View Detailed Area Performance
+            </button>
+        </div>
+
+    </main>
+
+</body>
+</html>
