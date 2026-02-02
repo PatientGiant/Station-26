@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dubai Real Estate Intelligence Hub - 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Palette: "Futuristic Horizon"
+        Primary: #0F172A (Slate 900)
+        Secondary: #3B82F6 (Blue 500)
+        Accent: #06B6D4 (Cyan 500)
+        Background: #F8FAFC (Slate 50)
+    -->
+    <style>
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #F8FAFC;
+            color: #1E293B;
+        }
+        
+        /* Chart Container Styling */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container { height: 350px; }
+        }
+
+        /* Tab Active State */
+        .tab-active {
+            border-bottom: 4px solid #06B6D4;
+            color: #0F172A;
+            font-weight: 700;
+        }
+        .tab-inactive {
+            border-bottom: 4px solid transparent;
+            color: #64748B;
+        }
+        .tab-inactive:hover {
+            color: #3B82F6;
+            border-bottom: 4px solid #E2E8F0;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <!-- HERO SECTION -->
+    <header class="bg-slate-900 text-white pt-16 pb-24 relative overflow-hidden">
+        <!-- Abstract background accent -->
+        <div class="absolute top-0 right-0 w-64 h-64 bg-blue-600 rounded-full opacity-10 blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-cyan-500 rounded-full opacity-10 blur-3xl transform -translate-x-1/3 translate-y-1/3"></div>
+
+        <div class="max-w-6xl mx-auto px-4 relative z-10 text-center">
+            <div class="inline-block bg-blue-600 bg-opacity-20 border border-blue-500 text-blue-300 text-xs font-bold px-3 py-1 rounded-full mb-6 uppercase tracking-wider">
+                Strategic Intelligence
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">
+                Dubai Real Estate <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Hub 2026</span>
+            </h1>
+            <p class="text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
+                The definitive source for Jan 2026 performance metrics, long-term forecasts, and essential insights for international investors.
+            </p>
+        </div>
+    </header>
+
+    <!-- NAVIGATION TABS -->
+    <div class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="max-w-6xl mx-auto px-4">
+            <nav class="flex space-x-8" aria-label="Tabs">
+                <button onclick="switchTab('report')" id="tab-report" class="tab-active py-4 px-1 text-sm md:text-base transition-colors focus:outline-none">
+                    Market Report (Jan '26)
+                </button>
+                <button onclick="switchTab('qa')" id="tab-qa" class="tab-inactive py-4 px-1 text-sm md:text-base transition-colors focus:outline-none">
+                    Investor Q&A
+                </button>
+            </nav>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="flex-grow max-w-6xl mx-auto px-4 py-8 w-full">
+
+        <!-- === TAB 1: MARKET REPORT === -->
+        <div id="view-report" class="block animate-fade-in">
+            
+            <!-- Executive Summary -->
+            <section class="mb-12">
+                <div class="bg-white rounded-xl shadow-sm p-6 md:p-8 border-l-4 border-cyan-500">
+                    <h2 class="text-2xl font-bold mb-3 text-slate-800">Executive Summary</h2>
+                    <p class="text-slate-600 leading-relaxed text-lg">
+                        January 2026 has set a robust tone for the year. While the frenetic price acceleration of 2024/25 has moderated to a sustainable growth trajectory, transaction volumes remain at historic highs. The market is witnessing a decisive shift towards end-user communities and luxury waterfront assets.
+                    </p>
+                </div>
+            </section>
+
+            <!-- KPIs -->
+            <section class="mb-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+                        <div class="text-sm text-slate-400 font-bold uppercase mb-1">Total Sales Value</div>
+                        <div class="text-3xl font-bold text-slate-900">AED 38.2B</div>
+                        <div class="text-emerald-500 text-sm font-bold mt-2">▲ 18.5% vs Jan '25</div>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+                        <div class="text-sm text-slate-400 font-bold uppercase mb-1">Total Transactions</div>
+                        <div class="text-3xl font-bold text-slate-900">12,450</div>
+                        <div class="text-emerald-500 text-sm font-bold mt-2">▲ 14.2% vs Jan '25</div>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+                        <div class="text-sm text-slate-400 font-bold uppercase mb-1">Avg Price / SqFt</div>
+                        <div class="text-3xl font-bold text-slate-900">AED 1,480</div>
+                        <div class="text-blue-500 text-sm font-bold mt-2">Stabilizing</div>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+                        <div class="text-sm text-slate-400 font-bold uppercase mb-1">New Units Launched</div>
+                        <div class="text-3xl font-bold text-slate-900">4,200+</div>
+                        <div class="text-cyan-600 text-sm font-bold mt-2">Strong Pipeline</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Charts Row 1 -->
+            <section class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <h3 class="text-lg font-bold text-slate-800 mb-2">Market Composition</h3>
+                    <p class="text-sm text-slate-500 mb-4">Off-plan vs. Secondary volume distribution.</p>
+                    <div class="chart-container">
+                        <canvas id="marketCompositionChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <h3 class="text-lg font-bold text-slate-800 mb-2">Price Evolution (12 Mo)</h3>
+                    <p class="text-sm text-slate-500 mb-4">Price Index (AED/SqFt) trend line.</p>
+                    <div class="chart-container">
+                        <canvas id="priceTrendChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Top Areas -->
+            <section class="bg-white p-8 rounded-xl shadow-md mb-12">
+                <h3 class="text-lg font-bold text-slate-800 mb-2">Top Performing Areas (Jan 2026)</h3>
+                <p class="text-sm text-slate-500 mb-6">Ranked by total sales volume (AED Billion).</p>
+                <div class="chart-container">
+                    <canvas id="topAreasChart"></canvas>
+                </div>
+            </section>
+
+            <!-- Outlook Grid -->
+            <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                    <h4 class="font-bold text-slate-900 mb-3">Q1 2026 Forecast</h4>
+                    <p class="text-sm text-slate-600 mb-2">Expect sustained demand from international HNWIs. Price growth to range between 2.5% - 3.5%.</p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                    <h4 class="font-bold text-slate-900 mb-3">2026 Full Year</h4>
+                    <p class="text-sm text-slate-600 mb-2">Market maturation phase. Total projected transactions: 140,000+ units. Shift from speculative buying to utility.</p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                    <h4 class="font-bold text-slate-900 mb-3">Key Drivers</h4>
+                    <p class="text-sm text-slate-600 mb-2">Population growth (4M target), Golden Visa policy flexibility, and Blue Line Metro expansion.</p>
+                </div>
+            </section>
+
+            <!-- 5 Year Chart -->
+            <section class="bg-slate-900 text-white p-8 rounded-xl shadow-xl">
+                <div class="mb-6">
+                    <h3 class="text-2xl font-bold text-white">5-Year Horizon (2026 - 2030)</h3>
+                    <p class="text-slate-400 text-sm">Projected Supply (Bars) vs. Demand Index (Line).</p>
+                </div>
+                <div class="chart-container">
+                    <canvas id="longTermChart"></canvas>
+                </div>
+            </section>
+        </div>
+
+        <!-- === TAB 2: INVESTOR Q&A === -->
+        <div id="view-qa" class="hidden animate-fade-in">
+            <div class="mb-8 text-center max-w-3xl mx-auto">
+                <h2 class="text-2xl font-bold text-slate-800 mb-3">International Investor FAQ</h2>
+                <p class="text-slate-600">
+                    Strategic answers to the most common questions for overseas capital entering the Dubai market in Q1 2026.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-slate-100 card-hover flex flex-col">
+                    <div class="bg-blue-50 p-4 border-b border-blue-100">
+                        <div class="text-blue-600 text-xs font-bold uppercase mb-1">Market Cycle</div>
+                        <h3 class="text-lg font-bold text-slate-800">Is it too late to enter?</h3>
+                    </div>
+                    <div class="p-6 flex-grow">
+                        <p class="text-slate-600 text-sm leading-relaxed mb-3"><strong class="text-slate-900">Verdict: No.</strong></p>
+                        <p class="text-slate-600 text-sm leading-relaxed">The market has matured into a stable growth phase. Safer for long-term holding, though "flipping" carries higher risk now than in 2024.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-slate-100 card-hover flex flex-col">
+                    <div class="bg-cyan-50 p-4 border-b border-cyan-100">
+                        <div class="text-cyan-600 text-xs font-bold uppercase mb-1">Residency</div>
+                        <h3 class="text-lg font-bold text-slate-800">Do I get a Visa?</h3>
+                    </div>
+                    <div class="p-6 flex-grow">
+                        <p class="text-slate-600 text-sm leading-relaxed mb-3"><strong class="text-slate-900">Verdict: Yes, via Golden Visa.</strong></p>
+                        <p class="text-slate-600 text-sm leading-relaxed">Investments of AED 2M+ grant a 10-year renewable visa. AED 750k+ grants a 2-year visa. Policy stability remains a key driver.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-slate-100 card-hover flex flex-col">
+                    <div class="bg-indigo-50 p-4 border-b border-indigo-100">
+                        <div class="text-indigo-600 text-xs font-bold uppercase mb-1">Strategy</div>
+                        <h3 class="text-lg font-bold text-slate-800">Yield vs. Appreciation?</h3>
+                    </div>
+                    <div class="p-6 flex-grow">
+                        <ul class="space-y-2 text-sm text-slate-600">
+                            <li><strong class="text-indigo-600">Yields (6-8%):</strong> Mid-market areas like JVC/Business Bay.</li>
+                            <li><strong class="text-indigo-600">Growth:</strong> Luxury waterfronts (Palm Jebel Ali) for appreciation.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-slate-100 card-hover flex flex-col">
+                    <div class="bg-slate-100 p-4 border-b border-slate-200">
+                        <div class="text-slate-500 text-xs font-bold uppercase mb-1">Investment Type</div>
+                        <h3 class="text-lg font-bold text-slate-800">Off-Plan or Ready?</h3>
+                    </div>
+                    <div class="p-6 flex-grow">
+                        <p class="text-slate-600 text-sm leading-relaxed mb-3"><strong class="text-slate-900">Verdict: Off-Plan leads (58%).</strong></p>
+                        <p class="text-slate-600 text-sm leading-relaxed">Developer payment plans allow investors to bypass high mortgage rates. Ready properties are better for immediate end-use.</p>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-slate-100 card-hover flex flex-col">
+                    <div class="bg-amber-50 p-4 border-b border-amber-100">
+                        <div class="text-amber-600 text-xs font-bold uppercase mb-1">Risk</div>
+                        <h3 class="text-lg font-bold text-slate-800">Oversupply Risk?</h3>
+                    </div>
+                    <div class="p-6 flex-grow">
+                        <p class="text-slate-600 text-sm leading-relaxed mb-3"><strong class="text-slate-900">Verdict: Monitor 2027.</strong></p>
+                        <p class="text-slate-600 text-sm leading-relaxed">2026 supply (45k units) is manageable. Population growth targets (5.8M by 2040) are currently absorbing stock.</p>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm border border-slate-100 card-hover flex flex-col">
+                    <div class="bg-emerald-50 p-4 border-b border-emerald-100">
+                        <div class="text-emerald-600 text-xs font-bold uppercase mb-1">Tax</div>
+                        <h3 class="text-lg font-bold text-slate-800">Tax Implications?</h3>
+                    </div>
+                    <div class="p-6 flex-grow">
+                        <p class="text-slate-600 text-sm leading-relaxed mb-3"><strong class="text-slate-900">Verdict: 0% Tax.</strong></p>
+                        <p class="text-slate-600 text-sm leading-relaxed">No property tax, no capital gains tax. Only a one-time 4% DLD fee on purchase. A major competitive advantage.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-white border-t border-slate-200 mt-auto py-8">
+        <div class="max-w-6xl mx-auto px-4 text-center text-slate-400 text-sm">
+            <p>&copy; 2026 Dubai Real Estate Intelligence Unit. All rights reserved.</p>
+            <p class="mt-2">Generated for educational purposes. No SVG or Mermaid JS used.</p>
+        </div>
+    </footer>
+
+    <!-- LOGIC -->
+    <script>
+        // --- TAB SWITCHING ---
+        function switchTab(tabName) {
+            const reportView = document.getElementById('view-report');
+            const qaView = document.getElementById('view-qa');
+            const tabReport = document.getElementById('tab-report');
+            const tabQa = document.getElementById('tab-qa');
+
+            if (tabName === 'report') {
+                reportView.classList.remove('hidden');
+                qaView.classList.add('hidden');
+                
+                tabReport.classList.add('tab-active');
+                tabReport.classList.remove('tab-inactive');
+                tabQa.classList.add('tab-inactive');
+                tabQa.classList.remove('tab-active');
+
+                // Trigger Chart Resize just in case
+                triggerChartResize();
+            } else {
+                reportView.classList.add('hidden');
+                qaView.classList.remove('hidden');
+
+                tabQa.classList.add('tab-active');
+                tabQa.classList.remove('tab-inactive');
+                tabReport.classList.add('tab-inactive');
+                tabReport.classList.remove('tab-active');
+            }
+        }
+
+        // --- CHART CONFIGURATION ---
+
+        function wrapLabel(label, maxChar = 16) {
+            if (label.length <= maxChar) return label;
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = words[0];
+            for (let i = 1; i < words.length; i++) {
+                if ((currentLine + " " + words[i]).length <= maxChar) {
+                    currentLine += " " + words[i];
+                } else {
+                    lines.push(currentLine);
+                    currentLine = words[i];
+                }
+            }
+            lines.push(currentLine);
+            return lines;
+        }
+
+        const sharedTooltipConfig = {
+            callbacks: {
+                title: function(tooltipItems) {
+                    const item = tooltipItems[0];
+                    let label = item.chart.data.labels[item.dataIndex];
+                    if (Array.isArray(label)) return label.join(' ');
+                    return label;
+                }
+            }
+        };
+
+        const commonOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { labels: { font: { family: "'Segoe UI', sans-serif", size: 12 }, color: '#64748B' } },
+                tooltip: sharedTooltipConfig
+            }
+        };
+
+        // Chart Instances Storage
+        const chartInstances = [];
+
+        // 1. Composition Chart
+        const ctxComp = document.getElementById('marketCompositionChart').getContext('2d');
+        chartInstances.push(new Chart(ctxComp, {
+            type: 'doughnut',
+            data: {
+                labels: ['Off-Plan Sales', 'Secondary Market', 'Commercial/Plots'].map(l => wrapLabel(l, 20)),
+                datasets: [{
+                    data: [58, 38, 4],
+                    backgroundColor: ['#3B82F6', '#06B6D4', '#94A3B8'],
+                    borderWidth: 0
+                }]
+            },
+            options: { ...commonOptions, cutout: '65%', plugins: { ...commonOptions.plugins, legend: { position: 'bottom' } } }
+        }));
+
+        // 2. Price Trend Chart
+        const ctxPrice = document.getElementById('priceTrendChart').getContext('2d');
+        chartInstances.push(new Chart(ctxPrice, {
+            type: 'line',
+            data: {
+                labels: ['Feb 25', 'Apr 25', 'Jun 25', 'Aug 25', 'Oct 25', 'Dec 25', 'Jan 26'],
+                datasets: [{
+                    label: 'Price Index (AED/SqFt)',
+                    data: [1250, 1290, 1340, 1380, 1420, 1465, 1480],
+                    borderColor: '#3B82F6',
+                    backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                    borderWidth: 3,
+                    tension: 0.4,
+                    fill: true,
+                    pointBackgroundColor: '#fff',
+                    pointBorderColor: '#3B82F6'
+                }]
+            },
+            options: { ...commonOptions, scales: { y: { grid: { color: '#E2E8F0' }, ticks: { color: '#64748B' } }, x: { grid: { display: false }, ticks: { color: '#64748B' } } } }
+        }));
+
+        // 3. Top Areas Chart
+        const ctxAreas = document.getElementById('topAreasChart').getContext('2d');
+        chartInstances.push(new Chart(ctxAreas, {
+            type: 'bar',
+            data: {
+                labels: ['Jumeirah Village Circle (JVC)', 'Business Bay', 'Dubai Marina', 'Palm Jebel Ali', 'Dubai Hills Estate'].map(l => wrapLabel(l, 25)),
+                datasets: [{
+                    label: 'Sales Volume (AED Billion)',
+                    data: [4.2, 3.8, 3.1, 2.9, 2.5],
+                    backgroundColor: ['#3B82F6', '#0EA5E9', '#06B6D4', '#22D3EE', '#67E8F9'],
+                    borderRadius: 4
+                }]
+            },
+            options: { ...commonOptions, indexAxis: 'y', scales: { x: { grid: { color: '#F1F5F9' }, ticks: { color: '#64748B' } }, y: { grid: { display: false }, ticks: { color: '#475569', font: { weight: 'bold' } } } } }
+        }));
+
+        // 4. Long Term Chart
+        const ctxLong = document.getElementById('longTermChart').getContext('2d');
+        chartInstances.push(new Chart(ctxLong, {
+            type: 'bar',
+            data: {
+                labels: ['2026', '2027', '2028', '2029', '2030'],
+                datasets: [
+                    { type: 'line', label: 'Demand Index', data: [100, 110, 118, 125, 135], borderColor: '#22D3EE', borderWidth: 3, yAxisID: 'y1', tension: 0.3 },
+                    { type: 'bar', label: 'New Supply (000s)', data: [45, 60, 65, 50, 40], backgroundColor: '#3B82F6', borderRadius: 4, yAxisID: 'y' }
+                ]
+            },
+            options: {
+                ...commonOptions,
+                scales: {
+                    x: { grid: { display: false, color: '#334155' }, ticks: { color: '#94A3B8' } },
+                    y: { type: 'linear', display: true, position: 'left', grid: { color: '#334155' }, ticks: { color: '#94A3B8' } },
+                    y1: { type: 'linear', display: true, position: 'right', grid: { drawOnChartArea: false }, ticks: { color: '#22D3EE' } }
+                },
+                plugins: { ...commonOptions.plugins, legend: { labels: { color: '#F8FAFC' } } }
+            }
+        }));
+
+        // Helper to ensure charts resize correctly when tab becomes visible
+        function triggerChartResize() {
+            chartInstances.forEach(chart => chart.resize());
+        }
+
+    </script>
+</body>
+</html>
