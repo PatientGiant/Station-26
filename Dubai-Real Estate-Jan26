@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dubai Real Estate Market Report - Jan 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Palette: "Futuristic Horizon" - Inspired by Dubai's skyline and 'Brilliant Blues' -->
+    <!-- 
+        Primary: #0F172A (Slate 900)
+        Secondary: #3B82F6 (Blue 500)
+        Accent: #06B6D4 (Cyan 500)
+        Background: #F8FAFC (Slate 50)
+        Cards: #FFFFFF (White)
+    -->
+    <style>
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #F8FAFC;
+            color: #1E293B;
+        }
+        
+        /* Chart Container Styling Rules */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 100%; /* Contextual max-width handled by grid */
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+
+        /* Gradient Text Utility */
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(to right, #3B82F6, #06B6D4);
+        }
+    </style>
+    <!-- 
+    Plan Summary:
+    1. Header: Title and Intro (Hook).
+    2. KPI Section: Jan 2026 Snapshot (Inform - Big Numbers).
+    3. Market Composition: Off-plan vs Secondary (Compare - Donut Chart).
+    4. Price Evolution: 12-Month Trend (Change - Line Chart).
+    5. Prime Locations: Top Performing Areas (Organize - Bar Chart).
+    6. Outlook 2026: Q1 & Full Year Forecast (Inform/Text Cards).
+    7. Long Term Vision: 5-Year Projection (Relationships/Change - Mixed Chart).
+    
+    Chart Choices & Justification (NO SVG):
+    - Donut Chart (Chart.js): Best for simple part-to-whole comparison of market segments.
+    - Line Chart (Chart.js): Essential for showing price trends over time.
+    - Horizontal Bar Chart (Chart.js): Accommodates long area names better than vertical bars for ranking.
+    - Mixed Bar/Line (Chart.js): Perfect for overlaying supply volume against price/demand projections.
+    -->
+</head>
+<body class="bg-slate-50">
+
+    <!-- Header Section -->
+    <header class="bg-slate-900 text-white py-12 px-4 shadow-lg">
+        <div class="max-w-6xl mx-auto text-center">
+            <div class="inline-block bg-blue-600 text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wider">Market Intelligence</div>
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Dubai Residential <span class="text-cyan-400">Real Estate</span></h1>
+            <p class="text-xl text-slate-300 max-w-2xl mx-auto">Performance Report: January 2026 & Future Outlook</p>
+            <p class="mt-4 text-sm text-slate-400">Data snapshot as of Feb 02, 2026</p>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 py-8 space-y-12">
+
+        <!-- INTRO -->
+        <section>
+            <div class="bg-white rounded-xl shadow-md p-6 md:p-8 border-l-4 border-blue-500">
+                <h2 class="text-2xl font-bold mb-4 text-slate-800">Executive Summary</h2>
+                <p class="text-slate-600 leading-relaxed text-lg">
+                    January 2026 has set a robust tone for the year, continuing the momentum from a record-breaking 2025. 
+                    While the frenetic pace of price acceleration has moderated to a sustainable growth trajectory, 
+                    transaction volumes remain at historic highs. This report breaks down the key performance indicators 
+                    for the first month of the year and provides a data-driven outlook for the short and medium term, 
+                    highlighting the shift towards end-user communities and luxury waterfront assets.
+                </p>
+            </div>
+        </section>
+
+        <!-- KPIS: JAN 2026 SNAPSHOT -->
+        <section>
+            <h3 class="text-3xl font-bold text-slate-800 mb-2">Jan 2026 Performance</h3>
+            <p class="text-slate-500 mb-6">Key market indicators showing year-on-year growth.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- KPI 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-sm text-slate-400 font-semibold uppercase tracking-wider mb-1">Total Sales Value</div>
+                    <div class="text-3xl font-bold text-slate-900">AED 38.2B</div>
+                    <div class="text-green-500 text-sm font-medium mt-2">▲ 18.5% vs Jan '25</div>
+                </div>
+                <!-- KPI 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-sm text-slate-400 font-semibold uppercase tracking-wider mb-1">Total Transactions</div>
+                    <div class="text-3xl font-bold text-slate-900">12,450</div>
+                    <div class="text-green-500 text-sm font-medium mt-2">▲ 14.2% vs Jan '25</div>
+                </div>
+                <!-- KPI 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-sm text-slate-400 font-semibold uppercase tracking-wider mb-1">Avg Price / SqFt</div>
+                    <div class="text-3xl font-bold text-slate-900">AED 1,480</div>
+                    <div class="text-blue-500 text-sm font-medium mt-2">Stabilizing Growth</div>
+                </div>
+                <!-- KPI 4 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-sm text-slate-400 font-semibold uppercase tracking-wider mb-1">New Units Launched</div>
+                    <div class="text-3xl font-bold text-slate-900">4,200+</div>
+                    <div class="text-cyan-600 text-sm font-medium mt-2">Strong Pipeline</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MARKET COMPOSITION & TRENDS -->
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            
+            <!-- Off-plan vs Ready -->
+            <div class="bg-white p-6 rounded-xl shadow-md flex flex-col">
+                <h3 class="text-xl font-bold text-slate-800 mb-2">Market Composition</h3>
+                <p class="text-sm text-slate-500 mb-6">
+                    Off-plan sales continue to dominate, driven by attractive payment plans and new luxury launches on Palm Jebel Ali and Dubai Islands.
+                </p>
+                <div class="flex-grow flex items-center justify-center bg-slate-50 rounded-lg p-4">
+                    <div class="chart-container">
+                        <canvas id="marketCompositionChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Price Trends -->
+            <div class="bg-white p-6 rounded-xl shadow-md flex flex-col">
+                <h3 class="text-xl font-bold text-slate-800 mb-2">Price Evolution (12 Months)</h3>
+                <p class="text-sm text-slate-500 mb-6">
+                    Tracking the steady capital appreciation. Note the slight stabilization in the curve entering 2026.
+                </p>
+                <div class="flex-grow flex items-center justify-center bg-slate-50 rounded-lg p-4">
+                    <div class="chart-container">
+                        <canvas id="priceTrendChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TOP AREAS -->
+        <section class="bg-white p-8 rounded-xl shadow-md">
+            <h3 class="text-xl font-bold text-slate-800 mb-2">Top Performing Areas (Jan 2026)</h3>
+            <p class="text-sm text-slate-500 mb-6">
+                Ranked by total sales volume. Jumeirah Village Circle (JVC) remains the volume leader, while luxury waterfront communities command the highest value per transaction.
+            </p>
+            <div class="chart-container" style="max-height: 450px; height: 400px;">
+                <canvas id="topAreasChart"></canvas>
+            </div>
+        </section>
+
+        <!-- OUTLOOK SECTION -->
+        <section>
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-slate-800">Market Outlook</h2>
+                <div class="h-1 w-20 bg-cyan-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Q1 & 2026 Forecast -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <!-- Q1 2026 -->
+                <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-blue-500">
+                    <h4 class="text-lg font-bold text-slate-900 mb-3">Q1 2026 Forecast</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <span class="text-blue-500 mr-2 font-bold">‣</span>
+                            <span class="text-sm text-slate-600">Sustained demand from international HNWIs.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-500 mr-2 font-bold">‣</span>
+                            <span class="text-sm text-slate-600">Surge in handovers impacting rental yields slightly in secondary locations.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-500 mr-2 font-bold">‣</span>
+                            <span class="text-sm text-slate-600">Price growth expected to range between 2.5% - 3.5% for the quarter.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Full Year 2026 -->
+                <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-cyan-500">
+                    <h4 class="text-lg font-bold text-slate-900 mb-3">Full Year 2026</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <span class="text-cyan-500 mr-2 font-bold">‣</span>
+                            <span class="text-sm text-slate-600">Market maturation: Shift from speculative buying to end-user utility.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-cyan-500 mr-2 font-bold">‣</span>
+                            <span class="text-sm text-slate-600">Total projected transactions: 140,000+ units.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-cyan-500 mr-2 font-bold">‣</span>
+                            <span class="text-sm text-slate-600">Mortgage rates stabilization encouraging secondary market buyers.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                 <!-- Drivers -->
+                 <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-indigo-500">
+                    <h4 class="text-lg font-bold text-slate-900 mb-3">Key Growth Drivers</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <span class="text-indigo-500 mr-2 font-bold">‣</span>
+                            <span class="text-sm text-slate-600"><strong>Population Growth:</strong> On track to hit 4M targets.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-indigo-500 mr-2 font-bold">‣</span>
+                            <span class="text-sm text-slate-600"><strong>Golden Visa:</strong> Continued policy flexibility attracting talent.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-indigo-500 mr-2 font-bold">‣</span>
+                            <span class="text-sm text-slate-600"><strong>Infrastructure:</strong> Blue Line Metro expansion boosting connectivity.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 5 Year Outlook Chart -->
+            <div class="bg-slate-900 text-white p-8 rounded-xl shadow-2xl">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+                    <div>
+                        <h3 class="text-2xl font-bold text-white mb-2">5-Year Horizon (2026 - 2030)</h3>
+                        <p class="text-slate-400 text-sm">Projected supply delivery vs. population-driven demand.</p>
+                    </div>
+                </div>
+                
+                <div class="chart-container" style="height: 400px; max-height: 500px;">
+                    <canvas id="longTermChart"></canvas>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                    <div class="bg-slate-800 p-4 rounded-lg">
+                        <h5 class="font-bold text-cyan-400 mb-2">Supply Dynamics</h5>
+                        <p class="text-sm text-slate-300">Peak delivery of units expected in 2027/2028 as projects launched in the 2024 boom complete. This will normalize rental prices.</p>
+                    </div>
+                    <div class="bg-slate-800 p-4 rounded-lg">
+                        <h5 class="font-bold text-blue-400 mb-2">2040 Master Plan Alignment</h5>
+                        <p class="text-sm text-slate-300">Development focus shifting to five main urban centers. Investment in green corridors and sustainable logistics will drive premium valuations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center text-slate-400 py-8 border-t border-slate-200 mt-12">
+            <p>&copy; 2026 Dubai Real Estate Intelligence Unit. All rights reserved.</p>
+            <p class="text-xs mt-2">Generated for educational purposes. No SVG or Mermaid JS used.</p>
+        </footer>
+
+    </main>
+
+    <script>
+        // --- UTILITY FUNCTIONS ---
+
+        /**
+         * Wraps long labels into arrays of strings for Chart.js
+         * @param {string} label - The text label
+         * @param {number} maxChar - Max characters per line (default 16)
+         * @returns {string|string[]}
+         */
+        function wrapLabel(label, maxChar = 16) {
+            if (label.length <= maxChar) return label;
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = words[0];
+
+            for (let i = 1; i < words.length; i++) {
+                if ((currentLine + " " + words[i]).length <= maxChar) {
+                    currentLine += " " + words[i];
+                } else {
+                    lines.push(currentLine);
+                    currentLine = words[i];
+                }
+            }
+            lines.push(currentLine);
+            return lines;
+        }
+
+        // Shared Tooltip Configuration for Multi-line Labels
+        const sharedTooltipConfig = {
+            callbacks: {
+                title: function(tooltipItems) {
+                    const item = tooltipItems[0];
+                    let label = item.chart.data.labels[item.dataIndex];
+                    if (Array.isArray(label)) {
+                        return label.join(' ');
+                    } else {
+                        return label;
+                    }
+                }
+            }
+        };
+
+        // Common Chart Options
+        const commonOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    labels: {
+                        font: { family: "'Segoe UI', sans-serif", size: 12 },
+                        color: '#64748B' // slate-500
+                    }
+                },
+                tooltip: sharedTooltipConfig
+            }
+        };
+
+        // --- CHART 1: MARKET COMPOSITION (Donut) ---
+        const ctxComposition = document.getElementById('marketCompositionChart').getContext('2d');
+        const rawLabelsComp = ['Off-Plan Sales', 'Secondary Market (Ready)', 'Commercial/Plots'];
+        const processedLabelsComp = rawLabelsComp.map(l => wrapLabel(l, 20));
+
+        new Chart(ctxComposition, {
+            type: 'doughnut',
+            data: {
+                labels: processedLabelsComp,
+                datasets: [{
+                    data: [58, 38, 4], // Percentages
+                    backgroundColor: [
+                        '#3B82F6', // Blue 500
+                        '#06B6D4', // Cyan 500
+                        '#94A3B8'  // Slate 400
+                    ],
+                    borderWidth: 0,
+                    hoverOffset: 10
+                }]
+            },
+            options: {
+                ...commonOptions,
+                cutout: '65%',
+                plugins: {
+                    ...commonOptions.plugins,
+                    legend: { position: 'bottom' }
+                }
+            }
+        });
+
+        // --- CHART 2: PRICE TRENDS (Line) ---
+        const ctxPrice = document.getElementById('priceTrendChart').getContext('2d');
+        const labelsPrice = ['Feb 25', 'Apr 25', 'Jun 25', 'Aug 25', 'Oct 25', 'Dec 25', 'Jan 26'];
+        
+        new Chart(ctxPrice, {
+            type: 'line',
+            data: {
+                labels: labelsPrice,
+                datasets: [{
+                    label: 'Price Index (AED/SqFt)',
+                    data: [1250, 1290, 1340, 1380, 1420, 1465, 1480],
+                    borderColor: '#3B82F6',
+                    backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                    borderWidth: 3,
+                    tension: 0.4, // Smooth curve
+                    fill: true,
+                    pointBackgroundColor: '#fff',
+                    pointBorderColor: '#3B82F6',
+                    pointRadius: 5
+                }]
+            },
+            options: {
+                ...commonOptions,
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        grid: { color: '#E2E8F0' }, // slate-200
+                        ticks: { color: '#64748B' }
+                    },
+                    x: {
+                        grid: { display: false },
+                        ticks: { color: '#64748B' }
+                    }
+                }
+            }
+        });
+
+        // --- CHART 3: TOP AREAS (Horizontal Bar) ---
+        const ctxAreas = document.getElementById('topAreasChart').getContext('2d');
+        const rawLabelsAreas = [
+            'Jumeirah Village Circle (JVC)', 
+            'Business Bay', 
+            'Dubai Marina', 
+            'Palm Jebel Ali', 
+            'Dubai Hills Estate'
+        ];
+        const processedLabelsAreas = rawLabelsAreas.map(l => wrapLabel(l, 25));
+
+        new Chart(ctxAreas, {
+            type: 'bar',
+            data: {
+                labels: processedLabelsAreas,
+                datasets: [{
+                    label: 'Sales Volume (AED Billion)',
+                    data: [4.2, 3.8, 3.1, 2.9, 2.5],
+                    backgroundColor: [
+                        '#3B82F6', 
+                        '#0EA5E9', 
+                        '#06B6D4', 
+                        '#22D3EE', 
+                        '#67E8F9'
+                    ],
+                    borderRadius: 4,
+                }]
+            },
+            options: {
+                ...commonOptions,
+                indexAxis: 'y', // Horizontal Bar
+                scales: {
+                    x: {
+                        grid: { color: '#F1F5F9' },
+                        ticks: { color: '#64748B' }
+                    },
+                    y: {
+                        grid: { display: false },
+                        ticks: { 
+                            color: '#475569',
+                            font: { weight: 'bold' }
+                        }
+                    }
+                }
+            }
+        });
+
+        // --- CHART 4: 5-YEAR OUTLOOK (Mixed: Bar + Line) ---
+        const ctxLongTerm = document.getElementById('longTermChart').getContext('2d');
+        
+        new Chart(ctxLongTerm, {
+            type: 'bar',
+            data: {
+                labels: ['2026', '2027', '2028', '2029', '2030'],
+                datasets: [
+                    {
+                        type: 'line',
+                        label: 'Projected Demand Index',
+                        data: [100, 110, 118, 125, 135],
+                        borderColor: '#22D3EE', // Cyan
+                        borderWidth: 3,
+                        yAxisID: 'y1',
+                        tension: 0.3
+                    },
+                    {
+                        type: 'bar',
+                        label: 'New Unit Supply (Thousands)',
+                        data: [45, 60, 65, 50, 40],
+                        backgroundColor: '#3B82F6', // Blue
+                        borderRadius: 4,
+                        yAxisID: 'y'
+                    }
+                ]
+            },
+            options: {
+                ...commonOptions,
+                scales: {
+                    x: {
+                        grid: { display: false, color: '#334155' },
+                        ticks: { color: '#94A3B8' }
+                    },
+                    y: {
+                        type: 'linear',
+                        display: true,
+                        position: 'left',
+                        title: { display: true, text: 'Supply (000s Units)', color: '#94A3B8' },
+                        grid: { color: '#334155' },
+                        ticks: { color: '#94A3B8' }
+                    },
+                    y1: {
+                        type: 'linear',
+                        display: true,
+                        position: 'right',
+                        title: { display: true, text: 'Demand Index (Base 100)', color: '#22D3EE' },
+                        grid: { drawOnChartArea: false },
+                        ticks: { color: '#22D3EE' }
+                    }
+                },
+                plugins: {
+                    ...commonOptions.plugins,
+                    legend: {
+                        labels: { color: '#F8FAFC' }
+                    }
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>
